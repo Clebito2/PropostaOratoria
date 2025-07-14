@@ -3,287 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta de Consultoria para IDTech | Live</title>
+    <title>Apresentação da Proposta - IDTech | Live Consultoria</title>
     <!-- Google Fonts: Poppins e Merriweather -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Estilos CSS -->
+    <!-- Estilos CSS para a apresentação -->
     <style>
         :root {
             --live-azul-petroleo: #06192a;
             --live-verde-vibrante: #00e800;
             --live-branco: #ffffff;
-            --live-cinza-claro: #f8f9fa;
-            --live-cinza-medio: #6c757d;
         }
+
+        /* Estilos gerais do corpo */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--live-azul-petroleo);
-            color: var(--live-branco);
+            background-color: #f4f4f4; /* Fundo neutro para visualização */
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            -webkit-print-color-adjust: exact; /* Força impressão de cores no Chrome */
+            print-color-adjust: exact; /* Força impressão de cores em outros browsers */
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        .header {
-            padding: 1.5rem 0;
+
+        /* Estilo de cada "slide" da apresentação */
+        .slide {
+            width: 210mm; /* Largura A4 */
+            height: 297mm; /* Altura A4 */
+            margin: 2rem auto;
+            padding: 25mm;
+            box-sizing: border-box;
+            background-color: var(--live-azul-petroleo);
+            color: var(--live-branco);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+            page-break-after: always; /* Cada slide em uma nova página na impressão */
         }
-        .header img {
-            height: 50px;
-        }
-        .hero {
-            padding: 5rem 0;
+
+        .slide-title-page {
             text-align: center;
         }
-        .hero h1 {
+
+        .slide-title-page .logo {
+            max-height: 80px;
+            margin-bottom: 2rem;
+        }
+
+        .slide-title-page h1 {
             font-size: 3rem;
             font-weight: 700;
-            color: var(--live-branco);
+            margin: 1rem 0;
         }
-        .hero .highlight {
+
+        .slide-title-page .highlight {
             color: var(--live-verde-vibrante);
         }
-        .section {
-            padding: 4rem 0;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-        .card {
-            background-color: #0a2138;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border-left: 5px solid var(--live-verde-vibrante);
-        }
-        .card p {
-            font-family: 'Merriweather', serif;
-            font-style: italic;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #1a3651;
-        }
-        .tab-button {
-            background: none;
-            border: none;
-            color: var(--live-branco);
-            padding: 1rem 2rem;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-        }
-        .tab-button.active, .tab-button:hover {
-            color: var(--live-verde-vibrante);
-            border-bottom-color: var(--live-verde-vibrante);
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .btn-contrato {
-            display: inline-block;
-            background-color: var(--live-verde-vibrante);
-            color: var(--live-azul-petroleo);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-        }
-        .btn-contrato:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0, 232, 0, 0.3);
-        }
-        .investment-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5rem;
-        }
-        .investment-table th, .investment-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #1a3651;
-        }
-        .investment-table th {
+
+        .slide-title-page p {
             font-size: 1.2rem;
         }
-        .investment-table .total {
+
+        /* Estilos de conteúdo dos slides */
+        .slide-header {
+            position: absolute;
+            top: 25mm;
+            left: 25mm;
+            right: 25mm;
+            border-bottom: 2px solid var(--live-verde-vibrante);
+            padding-bottom: 1rem;
+        }
+
+        .slide-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--live-verde-vibrante);
+            margin: 0;
+        }
+
+        .slide-content {
+            margin-top: 4rem; /* Espaço abaixo do cabeçalho */
+        }
+
+        .slide-content p, .slide-content li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .card-pdf {
+            font-family: 'Merriweather', serif;
+            font-style: italic;
+            border-left: 4px solid var(--live-verde-vibrante);
+            padding-left: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .action-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .action-item h3 {
+            color: var(--live-verde-vibrante);
+            margin-top: 0;
+        }
+
+        .investment-table-pdf {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+        .investment-table-pdf th, .investment-table-pdf td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .investment-table-pdf .total {
             font-weight: bold;
             font-size: 1.5rem;
             color: var(--live-verde-vibrante);
         }
-        .footer {
+
+        /* Rodapé de cada slide */
+        .slide-footer {
+            position: absolute;
+            bottom: 25mm;
+            left: 25mm;
+            right: 25mm;
             text-align: center;
-            padding: 3rem 0;
-            margin-top: 3rem;
-            border-top: 1px solid #1a3651;
+            font-size: 0.9rem;
             opacity: 0.7;
         }
-        .action-plan-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--live-verde-vibrante);
+            color: var(--live-azul-petroleo);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        /* Regras de impressão */
+        @media print {
+            body {
+                background-color: var(--live-branco); /* Fundo branco para impressão */
+            }
+            .slide {
+                margin: 0;
+                box-shadow: none;
+            }
+            .print-button {
+                display: none;
+            }
+        }
+        @page {
+            size: A4;
+            margin: 0;
         }
     </style>
 </head>
 <body>
+    
+    <button class="print-button" onclick="window.print()">🖨️ Salvar como PDF</button>
 
-    <!-- Cabeçalho -->
-    <header class="header container">
-        <img src="https://raw.githubusercontent.com/Clebito2/layout/main/Logo%20live%20oficial-36.png" alt="Logo Live">
-        <p>Proposta para: <strong>IDTech</strong></p>
-    </header>
-
-    <main>
-        <!-- Seção Hero -->
-        <section class="hero">
-            <div class="container">
-                <h1>Proposta de Treinamento<br><span class="highlight">Oratória Profissional</span></h1>
-                <p style="font-size: 1.2rem; margin-top: 1rem;">Apresentada em 14 de julho de 2025</p>
-            </div>
-        </section>
-
-        <!-- Seção Diagnóstico -->
-        <section id="diagnostico" class="section">
-            <div class="container">
-                <h2 class="section-title">Diagnóstico Estratégico</h2>
-                <div class="card">
-                    <p>Com base na solicitação da IDTech, identificamos uma oportunidade estratégica de alto impacto: a capacitação em 'Oratória Profissional' para 150 de seus colaboradores. A habilidade de comunicação eficaz é um pilar para o crescimento, alinhamento de equipes e fortalecimento da cultura organizacional. Este treinamento é classificado como um Projeto Estrutural de rápida implementação, desenhado para destravar o potencial de liderança e persuasão em larga escala, gerando resultados imediatos na performance individual e coletiva.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção Plano de Ação -->
-        <section id="plano-de-acao" class="section" style="background-color: #0a2138;">
-            <div class="container">
-                <h2 class="section-title">Plano de Ação</h2>
-                <div class="action-plan-grid">
-                    <div class="card">
-                        <h3 style="color:var(--live-verde-vibrante);">Etapa 01: Alinhamento e Customização</h3>
-                        <p style="font-style: normal; font-size: 1rem;">Reunião de kickoff para entender os desafios específicos de comunicação da IDTech e customizar o conteúdo do treinamento para o público-alvo. (Duração: 1 Semana)</p>
-                    </div>
-                    <div class="card">
-                        <h3 style="color:var(--live-verde-vibrante);">Etapa 02: Execução do Treinamento</h3>
-                        <p style="font-style: normal; font-size: 1rem;">Realização do treinamento intensivo de 8 horas, com dinâmicas práticas, teoria aplicada e feedback direto. (Duração: 1 Dia)</p>
-                    </div>
-                    <div class="card">
-                        <h3 style="color:var(--live-verde-vibrante);">Etapa 03: Pós-Treinamento</h3>
-                        <p style="font-style: normal; font-size: 1rem;">Entrega de material de apoio digital para todos os participantes e emissão dos certificados de conclusão. (Duração: 3 Dias úteis)</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção Proposta Detalhada -->
-        <section id="proposta" class="section">
-            <div class="container">
-                <h2 class="section-title">Detalhes da Proposta</h2>
-                <div class="tabs">
-                    <button class="tab-button active" onclick="openTab(event, 'scope')">Escopo Detalhado</button>
-                    <button class="tab-button" onclick="openTab(event, 'investment')">Investimento</button>
-                    <button class="tab-button" onclick="openTab(event, 'contract')">Contrato</button>
-                </div>
-
-                <!-- Conteúdo da Aba: Escopo -->
-                <div id="scope" class="tab-content active card">
-                    <h3 style="color:var(--live-verde-vibrante); margin-bottom: 1rem;">Escopo dos Entregáveis</h3>
-                    <ul style="list-style-type: none; padding: 0;">
-                        <li style="margin-bottom: 1rem; border-left: 3px solid var(--live-verde-vibrante); padding-left: 1rem;">
-                            <strong>Customização do Conteúdo:</strong> Reunião de kickoff com os gestores da IDTech para compreender os desafios de comunicação específicos, alinhar as expectativas e customizar o conteúdo do treinamento.
-                        </li>
-                        <li style="margin-bottom: 1rem; border-left: 3px solid var(--live-verde-vibrante); padding-left: 1rem;">
-                            <strong>Treinamento Intensivo (8 horas):</strong> Realização do treinamento (presencial ou online, a definir) abordando técnicas de controle da ansiedade, estruturação de discursos, uso da voz, linguagem corporal e estratégias de persuasão.
-                        </li>
-                        <li style="border-left: 3px solid var(--live-verde-vibrante); padding-left: 1rem;">
-                            <strong>Material de Apoio e Certificação:</strong> Entrega de um workbook digital com o resumo do conteúdo e ferramentas. Emissão e envio dos certificados digitais de conclusão.
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Conteúdo da Aba: Investimento -->
-                <div id="investment" class="tab-content card">
-                    <h3 style="color:var(--live-verde-vibrante); margin-bottom: 1rem;">Investimento</h3>
-                     <table class="investment-table">
-                        <thead>
-                            <tr>
-                                <th>Serviço</th>
-                                <th style="text-align: right;">Valor</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Treinamento "Oratória Profissional" (8h, 150 alunos)</td>
-                                <td style="text-align: right;">R$ 10.800,00</td>
-                            </tr>
-                            <tr class="total">
-                                <td>VALOR TOTAL</td>
-                                <td style="text-align: right;">R$ 10.800,00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div style="margin-top: 2rem;">
-                        <h4>Condições de Pagamento:</h4>
-                        <p style="font-style: normal;">50% (R$ 5.400,00) na assinatura do contrato e 50% (R$ 5.400,00) um dia útil antes da data de realização do treinamento.</p>
-                    </div>
-                </div>
-
-                <!-- Conteúdo da Aba: Contrato -->
-                <div id="contract" class="tab-content card">
-                     <h3 style="color:var(--live-verde-vibrante);">Contrato de Prestação de Serviços</h3>
-                     <p>O documento contratual completo está pronto para ser gerado. Ele formaliza o escopo, o investimento e as responsabilidades de ambas as partes.</p>
-                     <p><strong>Para gerar o PDF:</strong> Clique no botão abaixo para abrir a página do contrato e use a função "Salvar como PDF" do seu navegador (Ctrl+P). **Nota:** Este link é uma simulação; o arquivo do contrato precisa ser salvo separadamente.</p>
-                     <a href="contrato_IDTech.html" target="_blank" class="btn-contrato">📄 Abrir Contrato Completo para PDF</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Live Consultoria Empresarial</p>
+    <!-- Slide 1: Capa -->
+    <section class="slide slide-title-page">
+        <img src="https://raw.githubusercontent.com/Clebito2/layout/main/Logo%20live%20oficial-36.png" alt="Logo Live" class="logo">
+        <h1>Proposta de Treinamento<br><span class="highlight">Oratória Profissional</span></h1>
+        <p>Apresentada para <strong>IDTech</strong></p>
+        <p style="margin-top: 3rem; font-size: 1rem;">14 de julho de 2025</p>
+        <div class="slide-footer">
+            <p>Live Consultoria Empresarial</p>
         </div>
-    </footer>
+    </section>
 
-    <!-- Script para funcionalidade das abas -->
-    <script>
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tab-button");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-        // Garante que a primeira aba esteja ativa ao carregar a página
-        document.addEventListener('DOMContentLoaded', () => {
-             document.querySelector('.tab-button').click();
-        });
-    </script>
+    <!-- Slide 2: Diagnóstico Estratégico -->
+    <section class="slide">
+        <div class="slide-header">
+            <h2>Diagnóstico Estratégico</h2>
+        </div>
+        <div class="slide-content">
+            <div class="card-pdf">
+                <p>Com base na solicitação da IDTech, identificamos uma oportunidade estratégica de alto impacto: a capacitação em 'Oratória Profissional' para 150 de seus colaboradores. A habilidade de comunicação eficaz é um pilar para o crescimento, alinhamento de equipes e fortalecimento da cultura organizacional. Este treinamento é classificado como um Projeto Estrutural de rápida implementação, desenhado para destravar o potencial de liderança e persuasão em larga escala, gerando resultados imediatos na performance individual e coletiva.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <p>Proposta para IDTech | Live Consultoria</p>
+        </div>
+    </section>
+
+    <!-- Slide 3: Plano de Ação -->
+    <section class="slide">
+        <div class="slide-header">
+            <h2>Plano de Ação</h2>
+        </div>
+        <div class="slide-content">
+            <div class="action-item">
+                <h3>Etapa 01: Alinhamento e Customização</h3>
+                <p>Reunião de kickoff para entender os desafios específicos de comunicação da IDTech e customizar o conteúdo do treinamento. (Duração: 1 Semana)</p>
+            </div>
+            <div class="action-item">
+                <h3>Etapa 02: Execução do Treinamento</h3>
+                <p>Realização do treinamento intensivo de 8 horas, com dinâmicas práticas, teoria aplicada e feedback direto. (Duração: 1 Dia)</p>
+            </div>
+            <div class="action-item">
+                <h3>Etapa 03: Pós-Treinamento</h3>
+                <p>Entrega de material de apoio digital para todos os participantes e emissão dos certificados de conclusão. (Duração: 3 Dias úteis)</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <p>Proposta para IDTech | Live Consultoria</p>
+        </div>
+    </section>
+
+    <!-- Slide 4: Escopo Detalhado -->
+    <section class="slide">
+        <div class="slide-header">
+            <h2>Escopo Detalhado</h2>
+        </div>
+        <div class="slide-content">
+            <ul style="list-style-type: none; padding: 0;">
+                <li style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--live-verde-vibrante);">Customização do Conteúdo</h3>
+                    <p>Reunião de kickoff com os gestores da IDTech para compreender os desafios de comunicação específicos, alinhar as expectativas e customizar o conteúdo do treinamento.</p>
+                </li>
+                <li style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--live-verde-vibrante);">Treinamento Intensivo (8 horas)</h3>
+                    <p>Realização do treinamento (presencial ou online, a definir) abordando técnicas de controle da ansiedade, estruturação de discursos, uso da voz, linguagem corporal e estratégias de persuasão.</p>
+                </li>
+                <li>
+                    <h3 style="color: var(--live-verde-vibrante);">Material de Apoio e Certificação</h3>
+                    <p>Entrega de um workbook digital com o resumo do conteúdo e ferramentas. Emissão e envio dos certificados digitais de conclusão para os participantes.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="slide-footer">
+            <p>Proposta para IDTech | Live Consultoria</p>
+        </div>
+    </section>
+
+    <!-- Slide 5: Investimento -->
+    <section class="slide">
+        <div class="slide-header">
+            <h2>Investimento</h2>
+        </div>
+        <div class="slide-content">
+            <table class="investment-table-pdf">
+                <thead>
+                    <tr>
+                        <th>Serviço</th>
+                        <th style="text-align: right;">Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Treinamento "Oratória Profissional" (8h, 150 alunos)</td>
+                        <td style="text-align: right;">R$ 10.800,00</td>
+                    </tr>
+                    <tr class="total">
+                        <td>VALOR TOTAL</td>
+                        <td style="text-align: right;">R$ 10.800,00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 3rem; background-color: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px;">
+                <h3 style="color: var(--live-verde-vibrante); margin-top: 0;">Condições de Pagamento</h3>
+                <p>50% (R$ 5.400,00) na assinatura do contrato e 50% (R$ 5.400,00) um dia útil antes da data de realização do treinamento.</p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <p>Proposta para IDTech | Live Consultoria</p>
+        </div>
+    </section>
 
 </body>
 </html>
