@@ -46,8 +46,11 @@
         }
 
         .slide-title-page .logo {
-            max-height: 80px;
-            margin-bottom: 2rem;
+            max-height: 80px; /* Define a altura máxima */
+            width: auto; /* Deixa a largura automática para manter a proporção */
+            max-width: 300px; /* Evita que a imagem fique muito larga em qualquer situação */
+            margin: 0 auto 2rem auto; /* Centraliza a imagem horizontalmente */
+            display: block; /* Garante que a imagem se comporte como um bloco para a centralização */
         }
 
         .slide-title-page h1 {
@@ -177,7 +180,7 @@
 
     <!-- Slide 1: Capa -->
     <section class="slide slide-title-page">
-        <img src="Logo live oficial-21.png" alt="Logo Live" class="logo">
+        <img src="https://raw.githubusercontent.com/Clebito2/layout/main/Logo%20live%20oficial-36.png" alt="Logo Live" class="logo">
         <h1>Proposta de Treinamento<br><span class="highlight">Oratória Profissional</span></h1>
         <p>Apresentada para <strong>IDTech</strong></p>
         <p style="margin-top: 3rem; font-size: 1rem;">14 de julho de 2025</p>
